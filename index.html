@@ -5,19 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Trà Sữa Thiên Đường</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <title>Document</title>
 </head>
 <body>
 
   <nav class="navbar">
     <div class="content">
-      <ul class="list">
-        <li>Trang Chủ</li>
-        <li>Khám Phá</li>
-        <li>Liên Hệ</li>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div> 
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
       <div class="logo">
-        <a href="#">Trà sữa Thiên Đường</a>
+        <a href="#">Trà Sữa Thiên Đường</a>
       </div>
     </div>
   </nav>
@@ -43,7 +54,7 @@
          <img src="https://2.pik.vn/2021dda92335-d158-4b30-a016-258522920921.jpg" alt="">
        </div>
        <div class="slide">
-         <img src="https://hddesktopwallpapers.in/wp-content/uploads/2015/09/lake-backgrounds-sweet.jpg" alt="">
+         <img src="https://2.pik.vn/202139c44919-0a7b-439c-9643-5cc4e6a5f214.jpg" alt="">
        </div>
        <!--slide images end-->
        <!--automatic navigation start-->
@@ -793,6 +804,25 @@
     </div>    
   </div>
   <script type="text/javascript">
+
+const body = document.querySelector("body");
+      const navbar = document.querySelector(".navbar");
+      const menuBtn = document.querySelector(".menu-btn");
+      const cancelBtn = document.querySelector(".cancel-btn");
+      menuBtn.onclick = ()=>{
+        navbar.classList.add("show");
+        menuBtn.classList.add("hide");
+        body.classList.add("disabled");
+      }
+      cancelBtn.onclick = ()=>{
+        body.classList.remove("disabled");
+        navbar.classList.remove("show");
+        menuBtn.classList.remove("hide");
+      }
+      window.onscroll = ()=>{
+        this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+      }
+
     var counter = 1;
     setInterval(function(){
       document.getElementById('radio' + counter).checked = true;
